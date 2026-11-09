@@ -1,0 +1,57 @@
+settings:
+  prefix: "&8[&cRivalSMP&8] "
+lifesteal:
+  enabled: true
+  maximum-hearts: 20
+  minimum-hearts: 1
+  hearts-per-kill: 1
+  hearts-lost-on-death: 1
+weapons:
+  blood-sword:
+    soul-feast-hearts: 1
+    battle-instinct-strength: 1
+    heartbreaker:
+      max-health-reduction-hearts: 3
+      duration-seconds: 20
+      cooldown-seconds: 600
+  dooms-hammer:
+    hits-required: 10
+    thunderfall-damage: 8
+    lightning-min: 3
+    lightning-max: 4
+    lightning-radius: 6
+  scythe:
+    rhythm-hits: 3
+    rhythm-duration-seconds: 4
+    catastrophe-damage: 12
+    catastrophe-cooldown-seconds: 180
+  killer-knife:
+    combo-hits: 3
+    combo-bonus-damage: 3
+    backstab-bonus-damage: 4
+    twin-execution-damage: 6
+    twin-execution-cooldown-seconds: 90
+  auto-bow:
+    cooldown-seconds: 240
+    burst-duration-seconds: 10
+  crossbow:
+    sonic-damage: 10
+    cooldown-seconds: 300
+  ban-hammer:
+    kill-hearts: 2
+    protect-permission: "rivalsmp.banhammer.protected"
+announcements:
+  enabled: true
+  animation-frames: 18
+  frame-interval-ticks: 4
+rituals:
+  blood-sword: {duration-seconds: 300}
+  dooms-hammer: {duration-seconds: 600}
+  scythe: {duration-seconds: 900}
+  killer-knife: {duration-seconds: 240}
+  auto-bow: {duration-seconds: 480}
+  crossbow: {duration-seconds: 420}
+  ban-hammer: {duration-seconds: 1200}
+unique:
+  created: {}
+  pending: {}

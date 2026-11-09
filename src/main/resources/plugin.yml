@@ -1,0 +1,21 @@
+name: RivalSMP
+version: 2.0.0
+main: com.rivalsmp.RivalSMP
+api-version: '1.21.11'
+author: RivalSMP
+description: RivalSMP custom weapons, recipes, announcements and lifesteal.
+commands:
+  rivalsmp:
+    description: Main RivalSMP command
+    usage: /rivalsmp help
+    aliases: [rsmp]
+permissions:
+  rivalsmp.admin:
+    description: Allows administration of RivalSMP
+    default: op
+  rivalsmp.use:
+    description: Allows use of RivalSMP weapons
+    default: true
+  rivalsmp.banhammer.protected:
+    description: Protects a player from BanHammer kills
+    default: op
