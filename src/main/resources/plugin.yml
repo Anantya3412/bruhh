@@ -1,0 +1,24 @@
+name: RivalSMP
+version: 1.0.1
+main: com.rivalsmp.RivalSMP
+api-version: '1.21'
+author: RivalSMP
+description: Server utility plugin with configurable messages and announcements
+
+commands:
+  rivalsmp:
+    description: Main RivalSMP command
+    usage: /rivalsmp <help|info|reload>
+    permission: rivalsmp.use
+  announce:
+    description: Broadcast a server announcement
+    usage: /announce <message>
+    permission: rivalsmp.admin
+
+permissions:
+  rivalsmp.use:
+    description: Allows use of the RivalSMP command
+    default: true
+  rivalsmp.admin:
+    description: Allows administration of RivalSMP
+    default: op

@@ -1,0 +1,13 @@
+settings:
+  prefix: "&8[&bRivalSMP&8] &7"
+
+  join-message-enabled: true
+  join-message: "&b%player% &7joined the server!"
+
+  quit-message-enabled: true
+  quit-message: "&b%player% &7left the server!"
+
+  welcome-message-enabled: true
+  welcome-message: "&7Welcome to &bRivalSMP&7, &f%player%&7!"
+
+  announcement-prefix: "&8[&6Announcement&8] &f"
