@@ -24,13 +24,36 @@ jobs:
       - name: Build plugin
         run: mvn --batch-mode --no-transfer-progress clean package
 
-      - name: Verify plugin contents
+      - name: Find and verify plugin JAR
         run: |
-          jar tf target/RivalSMP-1.21.1-to-1.21.11.jar | grep -E '^(plugin.yml|com/rivalsmp/RivalSMP.class)$'
+          echo "Checking generated JAR files..."
+          find target -maxdepth 1 -name "*.jar" -print
+
+          JAR=$(find target -maxdepth 1 -name "*.jar" ! -name "*-sources.jar" | head -n 1)
+
+          if [ -z "$JAR" ]; then
+            echo "ERROR: No JAR was generated."
+            exit 1
+          fi
+
+          echo "Checking $JAR"
+          jar tf "$JAR" > jar_contents.txt
+
+          if ! grep -Fxq "plugin.yml" jar_contents.txt; then
+            echo "ERROR: plugin.yml is missing."
+            exit 1
+          fi
+
+          if ! grep -q '\.class$' jar_contents.txt; then
+            echo "ERROR: No compiled Java classes found."
+            exit 1
+          fi
+
+          echo "JAR verification passed."
 
       - name: Upload plugin JAR
         uses: actions/upload-artifact@v4
         with:
-          name: RivalSMP-1.21.1-to-1.21.11
-          path: target/RivalSMP-1.21.1-to-1.21.11.jar
+          name: RivalSMP-JAR
+          path: target/*.jar
           if-no-files-found: error
